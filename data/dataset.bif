@@ -1,0 +1,70 @@
+network DeathCauses {
+}
+variable GENDER {
+  type discrete [ 2 ] { M, F };
+}
+variable AGE {
+  type discrete [ 3 ] { Young, Adult, Old }
+}
+variable PERSONAL_INFO {
+    type discrete [ 6 ] { Young_M, Adult_M, Old_M, Young_F, Adult_F, Old_F, }
+}
+variable FALLS {
+    type discrete [  ] {  }
+}
+variable POISONINGS {
+    type discrete [  ] {  }
+}
+variable NATURE_FORCE {
+    type discrete [  ] {  }
+}
+variable OTHER_INJURIES {
+    type discrete [  ] {  }
+}
+variable TRANSPORT_INJURIES {
+    type discrete [  ] {  }
+}
+variable SELF_HARM_AND_VIOLENCE {
+    type discrete [  ] {  }
+}
+variable FALLS {
+    type discrete [  ] {  }
+}
+variable RESPIRATORY_INFECTIONS {
+    type discrete [  ] {  }
+}
+variable SEXUALLY_TRANSMITTED_INFECTIONS {
+    type discrete [  ] {  }
+}
+variable MATERNAL_AND_NEONATAL_DISORDERS {
+    type discrete [  ] {  }
+}
+variable CARDIOVASCULAR_DISEASES {
+    type discrete [  ] {  }
+}
+variable MALIGNANCY {
+    type discrete [  ] {  }
+}
+variable OTHER_SICKNESS {
+    type discrete [  ] {  }
+}
+variable SICKNESS {
+    type discrete [  ] {  }
+}
+variable DEATH {
+    type discrete [  ] {  }
+}
+probability ( GENDER ) {
+  table 0.5041, 0.4959;
+}
+probabiity ( AGE ) {
+    table 0.3188, 0.5995, 0.0817;
+}
+probability ( PERSONAL_INFO | AGE, GENDER ) {
+  (M, Young) 1, 0, 0, 0, 0, 0;
+  (M, Adult) 0, 1, 0, 0, 0, 0;
+  (M, Old) 0, 0, 1, 0, 0, 0;
+  (F, Young) 0, 0, 0, 1, 0, 0;
+  (F, Adult) 0, 0, 0, 0, 1, 0;
+  (F, Old) 0, 0, 0, 0, 0, 1;
+}
