@@ -134,7 +134,7 @@ probability ( CARDIOVASCULAR_DISEASES | PERSONAL_INFO ) {
     (oldMale) 0.0179, 0.9821;
 }
 probability ( MALIGNANCY | PERSONAL_INFO ) {
-    (youngFemale) 0.002000  , 0.9980000;
+    (youngFemale) 0.002000, 0.9980000;
     (adultFemale) 0.065700, 0.934300;
     (oldFemale) 0.168300, 0.831700;
     (youngMale) 0.002400, 0.997600;
