@@ -1,0 +1,226 @@
+network DeathCauses {
+}
+variable GENDER {
+  type discrete [ 2 ] { female, male };
+}
+variable AGE {
+  type discrete [ 3 ] { young, adult, old };
+}
+variable PERSONAL_INFO {
+    type discrete [ 6 ] { youngFemale, adultFemale, oldFemale, youngMale, adultMale, oldMale };
+}
+variable FALLS {
+    type discrete [ 2 ] { true, false };
+}
+variable POISONINGS {
+    type discrete [ 2 ] { true, false };
+}
+variable NATURE_FORCE {
+    type discrete [ 2 ] { true, false };
+}
+variable OTHER_INJURIES {
+    type discrete [ 2 ] { true, false };
+}
+variable TRANSPORT_INJURIES {
+    type discrete [ 2 ] { true, false };
+}
+variable SELF_HARM_AND_VIOLENCE {
+    type discrete [ 2 ] { true, false };
+}
+variable RESPIRATORY_INFECTIONS {
+    type discrete [ 2 ] { true, false };
+}
+variable MATERNAL_AND_NEONATAL_DISORDERS {
+    type discrete [ 2 ] { true, false };
+}
+variable CARDIOVASCULAR_DISEASES {
+    type discrete [ 2 ] { true, false };
+}
+variable MALIGNANCY {
+    type discrete [ 2 ] { true, false };
+}
+variable OTHER_SICKNESS {
+    type discrete [ 2 ] { true, false };
+}
+variable UNINTENTIONAL_INJURIES {
+    type discrete [ 2 ] { true, false };
+}
+variable INJURIES {
+    type discrete [ 2 ] { true, false };
+}
+variable SICKNESS {
+    type discrete [ 2 ] { true, false };
+}
+variable DEATH {
+    type discrete [ 2 ] { true, false };
+}
+probability ( GENDER ) {
+    table 0.4959, 0.5041;
+}
+probabiity ( AGE ) {
+    table 0.3188, 0.5995, 0.0817;
+}
+probability ( PERSONAL_INFO | GENDER, AGE ) {
+  (female, young) 1, 0, 0, 0, 0, 0;
+  (female, adult) 0, 1, 0, 0, 0, 0;
+  (female, old) 0, 0, 1, 0, 0, 0;
+  (male, young) 0, 0, 0, 1, 0, 0;
+  (male, adult) 0, 0, 0, 0, 1, 0;
+  (male, old) 0, 0, 0, 0, 0, 1;
+}
+probability ( FALLS | PERSONAL_INFO ) {
+    (youngFemale) 0.0000141, 0.9999859;
+    (adultFemale) 0.0000295, 0.9999705;
+    (oldFemale) 0.00062, 0.99938;
+    (youngMale) 0.0000207, 0.9999793;
+    (adultMale) 0.0000737, 0.9999263;
+    (oldMale) 0.000596, 0.999404;
+}
+probability ( POISONINGS | PERSONAL_INFO ) {
+    (youngFemale) 0.00000568, 0.99999432;
+    (adultFemale) 0.00000631, 0.99999369;
+    (oldFemale) 0.0000161, 0.9999839;
+    (youngMale) 0.00000743, 0.99999257;
+    (adultMale) 0.0000138, 0.9999862;
+    (oldMale) 0.0000479, 0.9999521;
+}
+probability ( NATURE_FORCE | PERSONAL_INFO ) {
+    (youngFemale) 0.000000929, 0.999999071;
+    (adultFemale) 0.00000212, 0.99999779;
+    (oldFemale) 0.000000769, 0.999999231;
+    (youngMale) 0.00000106, 0.99999894;
+    (adultMale) 0.00000165, 0.99999835;
+    (oldMale) 0.00000218, 0.99999782;
+}
+probability ( OTHER_INJURIES | PERSONAL_INFO ) {
+    (youngFemale) 0.00111, 0.99899;
+    (adultFemale) 0.0000668, 0.9999332;
+    (oldFemale) 0.000280, 0.99972;
+    (youngMale) 0.000151, 0.999849;
+    (adultMale) 0.000160, 0.99984;
+    (oldMale) 0.000328, 0.999672;
+}
+probability ( TRANSPORT_INJURIES | PERSONAL_INFO ) {
+    (youngFemale) 0.0000513, 0.9999487;
+    (adultFemale) 0.0000926, 0.9999074;
+    (oldFemale) 0.000116, 0.999884;
+    (youngMale) 0.0000738, 0.9999262;
+    (adultMale) 0.000330, 0.99967;
+    (oldMale) 0.000348, 0.999652;
+}
+probability ( SELF_HARM_AND_VIOLENCE | PERSONAL_INFO ) {
+    (youngFemale) 0.0000335, 0.9999665;
+    (adultFemale) 0.000117, 0.999883;
+    (oldFemale) 0.000136, 0.999864;
+    (youngMale) 0.0000325, 0.9999675;
+    (adultMale) 0.000340, 0.99966;
+    (oldMale) 0.000302, 0.999698;
+}
+probability ( RESPIRATORY_INFECTIONS | PERSONAL_INFO ) {
+    (youngFemale) 0.000539, 0.999461;
+    (adultFemale) 0.000248, 0.999752;
+    (oldFemale) 0.00222, 0.99778;
+    (youngMale) 0.000458, 0.999542;
+    (adultMale) 0.000351, 0.999649;
+    (oldMale) 0.00254, 0.99746;
+}
+probability ( MATERNAL_AND_NEONATAL_DISORDERS | PERSONAL_INFO ) {
+    (youngFemale) 0.0000865, 0.9999135;
+    (adultFemale) 0.000160, 0.99984;
+    (oldFemale) 0.0000126, 0.9999874;
+    (youngMale) 0.000269, 0.999731;
+    (adultMale) 0.000678, 0.999322;
+    (oldMale) 0.00333, 0.99667;
+}
+probability ( CARDIOVASCULAR_DISEASES | PERSONAL_INFO ) {
+    (youngFemale) 0.0000237, 0.9999763;
+    (adultFemale) 0.000947, 0.999053;
+    (oldFemale) 0.0164, 0.9836;
+    (youngMale) 0.0000245, 0.9999755;
+    (adultMale) 0.00140, 0.9986;
+    (oldMale) 0.0179, 0.9821;
+}
+probability ( MALIGNANCY | PERSONAL_INFO ) {
+    (youngFemale) 0.0000537, 0.9999463;
+    (adultFemale) 0.00107, 0.99893;
+    (oldFemale) 0.00618, 0.99382;
+    (youngMale) 0.0000642, 0.9999358;
+    (adultMale) 0.00114, 0.99886;
+    (oldMale) 0.00861, 0.99139;
+}
+probability ( OTHER_SICKNESS | PERSONAL_INFO ) {
+    (youngFemale) 0.00226, 0.99774;
+    (adultFemale) 0.00111, 0.99889;
+    (oldFemale) 0.0145, 0.9855;
+    (youngMale) 0.00280, 0.9972;
+    (adultMale) 0.00287, 0.99713;
+    (oldMale) 0.0171, 0.9829;
+}
+probability ( UNINTENTIONAL_INJURIES | FALLS,  POISONINGS, NATURE_FORCE, OTHER_INJURIES){
+    (true, true, true, true) 1, 0;
+    (true, true, true, false) 1, 0;
+    (true, true, false, true) 1, 0;
+    (true, true, false, false) 1, 0;
+    (true, false, true, true) 1, 0;
+    (true, false, true, false) 1, 0;
+    (true, false, false, true) 1, 0;
+    (true, false, false, false) 1, 0;
+    (false, true, true, true) 1, 0;
+    (false, true, true, false) 1, 0;
+    (false, true, false, true) 1, 0;
+    (false, true, false, false) 1, 0;
+    (false, false, true, true) 1, 0;
+    (false, false, true, false) 1, 0;
+    (false, false, false, true) 1, 0;
+    (false, false, false, false) 0, 1;
+}
+probability ( INJURIES | UNINTENTIONAL_INJURIES, TRANSPORT_INJURIES, SELF_HARM_AND_VIOLENCE){
+    (true, true, true) 1, 0;
+    (true, true, false) 1, 0
+    (true, false, true) 1, 0;
+    (true, false, false) 1, 0;
+    (false, true, true) 1, 0;
+    (false, true, false) 1, 0;
+    (false, false, true) 1, 0;
+    (false, false, false) 0, 1;
+}
+probability ( SICKNESS | RESPIRATORY_INFECTIONS, MATERNAL_AND_NEONATAL_DISORDERS, CARDIOVASCULAR_DISEASES, MALIGNANCY, OTHER_SICKNESS){
+    (true, true, true, true, true) 1, 0;
+    (true, true, true, true, false) 1, 0;
+    (true, true, true, false, true) 1, 0;
+    (true, true, true, false, false) 1, 0;
+    (true, true, false, true, true) 1, 0;
+    (true, true, false, true, false) 1, 0;
+    (true, true, false, false, true) 1, 0;
+    (true, true, false, false, false) 1, 0;
+    (true, false, true, true, true) 1, 0;
+    (true, false, true, true, false) 1, 0;
+    (true, false, true, false, true) 1, 0;
+    (true, false, true, false, false) 1, 0;
+    (true, false, false, true, true) 1, 0;
+    (true, false, false, true, false) 1, 0;
+    (true, false, false, false, true) 1, 0;
+    (true, false, false, false, false) 1, 0;
+    (false, true, true, true, true) 1, 0;
+    (false, true, true, true, false) 1, 0;
+    (false, true, true, false, true) 1, 0;
+    (false, true, true, false, false) 1, 0;
+    (false, true, false, true, true) 1, 0;
+    (false, true, false, true, false) 1, 0;
+    (false, true, false, false, true) 1, 0;
+    (false, true, false, false, false) 1, 0;
+    (false, false, true, true, true) 1, 0;
+    (false, false, true, true, false) 1, 0;
+    (false, false, true, false, true) 1, 0;
+    (false, false, true, false, false) 1, 0;
+    (false, false, false, true, true) 1, 0;
+    (false, false, false, true, false) 1, 0;
+    (false, false, false, false, true) 1, 0;
+    (false, false, false, false, false) 0, 1;
+}
+probability ( DEATH | INJURIES, SICKNESS ) {
+    (true, true) 1,0;
+    (true, false) 1,0;
+    (false, true) 1,0;
+    (false, false) 0, 1;
+}

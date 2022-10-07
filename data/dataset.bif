@@ -1,70 +1,218 @@
 network DeathCauses {
 }
 variable GENDER {
-  type discrete [ 2 ] { M, F };
+  type discrete [ 2 ] { female, male };
 }
 variable AGE {
-  type discrete [ 3 ] { Young, Adult, Old }
+  type discrete [ 3 ] { young, adult, old };
 }
 variable PERSONAL_INFO {
-    type discrete [ 6 ] { Young_M, Adult_M, Old_M, Young_F, Adult_F, Old_F, }
+    type discrete [ 6 ] { youngFemale, adultFemale, oldFemale, youngMale, adultMale, oldMale };
 }
 variable FALLS {
-    type discrete [  ] {  }
+    type discrete [ 2 ] { true, false };
 }
 variable POISONINGS {
-    type discrete [  ] {  }
+    type discrete [ 2 ] { true, false };
 }
 variable NATURE_FORCE {
-    type discrete [  ] {  }
+    type discrete [ 2 ] { true, false };
 }
 variable OTHER_INJURIES {
-    type discrete [  ] {  }
+    type discrete [ 2 ] { true, false };
 }
-variable TRANSPORT_INJURIES {
-    type discrete [  ] {  }
+variable TRANSPORT_INCIDENT {
+    type discrete [ 2 ] { true, false };
 }
 variable SELF_HARM_AND_VIOLENCE {
-    type discrete [  ] {  }
-}
-variable FALLS {
-    type discrete [  ] {  }
+    type discrete [ 2 ] { true, false };
 }
 variable RESPIRATORY_INFECTIONS {
-    type discrete [  ] {  }
-}
-variable SEXUALLY_TRANSMITTED_INFECTIONS {
-    type discrete [  ] {  }
-}
-variable MATERNAL_AND_NEONATAL_DISORDERS {
-    type discrete [  ] {  }
+    type discrete [ 2 ] { true, false };
 }
 variable CARDIOVASCULAR_DISEASES {
-    type discrete [  ] {  }
+    type discrete [ 2 ] { true, false };
 }
 variable MALIGNANCY {
-    type discrete [  ] {  }
+    type discrete [ 2 ] { true, false };
 }
 variable OTHER_SICKNESS {
-    type discrete [  ] {  }
+    type discrete [ 2 ] { true, false };
+}
+variable UNINTENTIONAL_INJURIES {
+    type discrete [ 2 ] { true, false };
 }
 variable SICKNESS {
-    type discrete [  ] {  }
+    type discrete [ 2 ] { true, false };
 }
 variable DEATH {
-    type discrete [  ] {  }
+    type discrete [ 2 ] { true, false };
 }
 probability ( GENDER ) {
-  table 0.5041, 0.4959;
+    table 0.4959, 0.5041;
 }
 probabiity ( AGE ) {
     table 0.3188, 0.5995, 0.0817;
 }
-probability ( PERSONAL_INFO | AGE, GENDER ) {
-  (M, Young) 1, 0, 0, 0, 0, 0;
-  (M, Adult) 0, 1, 0, 0, 0, 0;
-  (M, Old) 0, 0, 1, 0, 0, 0;
-  (F, Young) 0, 0, 0, 1, 0, 0;
-  (F, Adult) 0, 0, 0, 0, 1, 0;
-  (F, Old) 0, 0, 0, 0, 0, 1;
+probability ( PERSONAL_INFO | GENDER, AGE ) {
+  (female, young) 1, 0, 0, 0, 0, 0;
+  (female, adult) 0, 1, 0, 0, 0, 0;
+  (female, old) 0, 0, 1, 0, 0, 0;
+  (male, young) 0, 0, 0, 1, 0, 0;
+  (male, adult) 0, 0, 0, 0, 1, 0;
+  (male, old) 0, 0, 0, 0, 0, 1;
+}
+probability ( FALLS | PERSONAL_INFO, CARDIOVASCULAR_DISEASES ) {
+    (youngFemale, false) 0.14037, 0.85963;
+    (adultFemale, false) 0.06380, 0.93620;
+    (oldFemale, false) 0.12761, 0.87239;
+    (youngMale, false) 0.18288, 0.81712;
+    (adultMale, false) 0.08313, 0.91687;
+    (oldMale, false) 0.16626, 0.83374;
+    (youngFemale, true) 0.14037, 0.85963;
+    (adultFemale, true) 0.08520, 0.9148;
+    (oldFemale, true) 0.15, 0.85;
+    (youngMale, true) 0.08313, 0.91687;
+    (adultMale, true) 0.10411, 0.89589;
+    (oldMale, true) 0.18336, 0.81664;
+}
+probability ( POISONINGS | PERSONAL_INFO ) {
+    (youngFemale) 0.00000568, 0.99999432;
+    (adultFemale) 0.00000631, 0.99999369;
+    (oldFemale) 0.0000161, 0.9999839;
+    (youngMale) 0.00000743, 0.99999257;
+    (adultMale) 0.0000138, 0.9999862;
+    (oldMale) 0.0000479, 0.9999521;
+}
+probability ( NATURE_FORCE ) {
+    table 0.141, 0.859;
+}
+probability ( OTHER_INJURIES | PERSONAL_INFO ) {
+    (youngFemale) 0.00111, 0.99899;
+    (adultFemale) 0.0000668, 0.9999332;
+    (oldFemale) 0.000280, 0.99972;
+    (youngMale) 0.000151, 0.999849;
+    (adultMale) 0.000160, 0.99984;
+    (oldMale) 0.000328, 0.999672;
+}
+probability ( TRANSPORT_INCIDENT | PERSONAL_INFO, CARDIOVASCULAR_DISEASES ) {
+    (youngFemale, false) 0.01, 0.99;
+    (adultFemale, false) 0.057, 0.943;
+    (oldFemale, false) 0.027, 0.973;
+    (youngMale, false) 0.018, 0.982;
+    (adultMale, false) 0.09, 0.91;
+    (oldMale, false) 0.038, 0.962;
+    (youngFemale, true) 0.0152, 0.9848;
+    (adultFemale, true) 0.08664, 0.91336;
+    (oldFemale, true) 0.04104, 0.95896; 
+    (youngMale, true) 0.02736, 0.97264;
+    (adultMale, true) 0.1368, 0.8632;
+    (oldMale, true) 0.05776, 0.94224;
+}
+probability ( SELF_HARM_AND_VIOLENCE | PERSONAL_INFO ) {
+    (youngFemale) 0.00021, 0.99979;
+    (adultFemale) 0.01195, 0.98805;
+    (oldFemale) 0.008, 0.9992;
+    (youngMale) 0.00042, 0.99958;
+    (adultMale) 0.0239, 0.9761;
+    (oldMale) 0.016, 0.984;
+}
+probability ( RESPIRATORY_INFECTIONS | PERSONAL_INFO ) {
+    (youngFemale) 0.41500, 0.585000;
+    (adultFemale) 0.180000, 0.820000;
+    (oldFemale) 0.247800, 0.7522000;
+    (youngMale) 0.332000, 0.668000;
+    (adultMale) 0.144000, 0.856000;
+    (oldMale) 0.198240, 0.801760;
+}
+probability ( CARDIOVASCULAR_DISEASES | PERSONAL_INFO ) {
+    (youngFemale) 0.0000237, 0.9999763;
+    (adultFemale) 0.000947, 0.999053;
+    (oldFemale) 0.0164, 0.9836;
+    (youngMale) 0.0000245, 0.9999755;
+    (adultMale) 0.00140, 0.9986;
+    (oldMale) 0.0179, 0.9821;
+}
+probability ( MALIGNANCY | PERSONAL_INFO ) {
+    (youngFemale) 0.002000  , 0.9980000;
+    (adultFemale) 0.065700, 0.934300;
+    (oldFemale) 0.168300, 0.831700;
+    (youngMale) 0.002400, 0.997600;
+    (adultMale) 0.078840, 0.921160;
+    (oldMale) 0.201960, 0.798040;
+}
+probability ( OTHER_SICKNESS | PERSONAL_INFO ) {
+    (youngFemale) 0.00226, 0.99774;
+    (adultFemale) 0.00111, 0.99889;
+    (oldFemale) 0.0145, 0.9855;
+    (youngMale) 0.00280, 0.9972;
+    (adultMale) 0.00287, 0.99713;
+    (oldMale) 0.0171, 0.9829;
+}
+probability (DEATH | OTHER_INJURIES, UNINTENTIONAL_INJURIES, TRANSPORT_INCIDENT, SELF_HARM_AND_VIOLENCE, SICKNESS, OTHER_SICKNESS) {
+    (true,true,true,true,true,true) 0.9999, 0.0001;
+    (true,true,true,true,true,false) 0.81, 0.19;
+    (true,true,true,true,false,true) , ;
+    (true,true,true,true,false,false) , ;
+    (true,true,true,false,true,true) , ;
+    (true,true,true,false,true,false) , ;
+    (true,true,true,false,false,true) , ;
+    (true,true,true,false,false,false) , ;
+    (true,true,false,true,true,true) , ;
+    (true,true,false,true,true,false) , ;
+    (true,true,false,true,false,true) , ;
+    (true,true,false,true,false,false) , ;
+    (true,true,false,false,true,true) , ;
+    (true,true,false,false,true,false) , ;
+    (true,true,false,false,false,true) , ;
+    (true,true,false,false,false,false) , ;
+    (true,false,true,true,true,true) , ;
+    (true,false,true,true,true,false) , ;
+    (true,false,true,true,false,true) , ;
+    (true,false,true,true,false,false) , ;
+    (true,false,true,false,true,true) , ;
+    (true,false,true,false,true,false) , ;
+    (true,false,true,false,false,true) , ;
+    (true,false,true,false,false,false) , ;
+    (true,false,false,true,true,true) , ;
+    (true,false,false,true,true,false) , ;
+    (true,false,false,true,false,true) , ;
+    (true,false,false,true,false,false) , ;
+    (true,false,false,false,true,true) , ;
+    (true,false,false,false,true,false) , ;
+    (true,false,false,false,false,true) , ;
+    (true,false,false,false,false,false) , ;
+    (false,true,true,true,true,true) , ;
+    (false,true,true,true,true,false) , ;
+    (false,true,true,true,false,true) , ;
+    (false,true,true,true,false,false) , ;
+    (false,true,true,false,true,true) , ;
+    (false,true,true,false,true,false) , ;
+    (false,true,true,false,false,true) , ;
+    (false,true,true,false,false,false) , ;
+    (false,true,false,true,true,true) , ;
+    (false,true,false,true,true,false) , ;
+    (false,true,false,true,false,true) , ;
+    (false,true,false,true,false,false) , ;
+    (false,true,false,false,true,true) , ;
+    (false,true,false,false,true,false) , ;
+    (false,true,false,false,false,true) , ;
+    (false,true,false,false,false,false) , ;
+    (false,false,true,true,true,true) , ;
+    (false,false,true,true,true,false) , ;
+    (false,false,true,true,false,true) , ;
+    (false,false,true,true,false,false) , ;
+    (false,false,true,false,true,true) , ;
+    (false,false,true,false,true,false) , ;
+    (false,false,true,false,false,true) , ;
+    (false,false,true,false,false,false) , ;
+    (false,false,false,true,true,true) , ;
+    (false,false,false,true,true,false) , ;
+    (false,false,false,true,false,true) , ;
+    (false,false,false,true,false,false) , ;
+    (false,false,false,false,true,true) , ;
+    (false,false,false,false,true,false) , ;
+    (false,false,false,false,false,true) , ;
+    (false,false,false,false,false,false) 0.0001, 0.9999;
+    
 }

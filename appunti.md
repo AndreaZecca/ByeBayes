@@ -14,7 +14,7 @@ ADULT       2448000000      2516000000
 OLD         372000000       291000000
 
 # Distribution by age:
-<strong>0-14</strong>: 1,893 billions    <i>(young)</i>
+<strong>0-14</strong>: 1,893 billions    <i>(young)</i> 
 (0.910 billions are female and 0.983 are male)
 
 <strong>15-70</strong>: 4,784 billions   <i>(adult)</i>
@@ -53,6 +53,27 @@ uomini nell'ultima fascia 173541
 P(F | male, old) = 5.96e-4
 
 ## POISONING
+Total exposures: 3,316,671
+
+45% teens
+40% adults
+15% old
+46% women
+54% men
+
+total 0.043
+
+young female:0,008901
+young male: 0,01
+adult female: 0,0079
+adult male: 0,00928
+old male: 0,003483
+old female: 0,002967
+
+
+
+
+
 donne nella prima fascia 5171\
 P(P | female, young) = 5.68e-6
 
@@ -116,6 +137,20 @@ P(U | male, old) = 3.28e-4
 
 
 # TRANSPORT INJURIES
+
+https://www.sciencedirect.com/science/article/pii/S0022437517307600
+https://www.iihs.org/topics/fatality-statistics/detail/yearly-snapshot#age-and-sex
+
+total cases in population:
+total: 0,24
+
+young females 0,01
+young males   0,018
+adult females 0,057
+adult males 0,09
+old females 0,027
+old males 0,038
+
 donne nella prima fascia 46660\
 P(T | female, young) = 5.13e-5
 
@@ -158,9 +193,6 @@ P(S | male, old) = 3.02e-4
 
 ------------------------------
 ------------------------------
-
-
-
 
 
 
@@ -209,6 +241,15 @@ P(N | male, old) = 3.33e-3
 ------------------------------
 
 # CARDIOVASCULAR DISEASES
+0,2%
+70% males
+40% females
+
+6% teens
+60% adult
+34% old
+
+
 donne nella prima fascia 21595\
 P(C | female, young) = 2.37e-5
 
@@ -238,10 +279,10 @@ donne nella seconda fascia 2622122\
 P(M | female, adult) = 1.07e-3
 
 donne nella terza fascia 1801231
-P(M | female, old) = 6.18e-3
+P(M | female, old) = 4.84e-3
 
 uomini nella prima fascia 63066\
-P(M | male, young) = 6.41e-41
+P(M | male, young) = 6.42e-5
 
 uomini nella seconda fascia 2872083\
 P(M | male, adult) = 1.14e-3
@@ -270,3 +311,15 @@ P(O | male, adult) = 2.87e-3
 
 uomini nella terza fascia 4978202
 P(O | male, old) = 1.71e-2
+
+
+# \# PEOPLE DIRECTLY AFFECTED BY NATURAL DISASTER
+105938605 (about 1.41%)
+
+## WEIGTHS
+OTHER_INJURIES,                 0.1521
+UNINTENTIONAL_INJURIES,         0.1522
+TRANSPORT_INCIDENT,             0.1013
+SELF_HARM_AND_VIOLENCE,         0.1522
+SICKNESS,                       0.2511
+OTHER_SICKNESS                  0.1910
