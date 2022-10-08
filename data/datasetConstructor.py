@@ -1,4 +1,6 @@
-order = 4
+import random
+
+order = 1
 alpha = 1
 
 X = 0
@@ -27,12 +29,12 @@ fallsProb ["adultMaletrue"] = 0.10411
 fallsProb ["oldMaletrue"] = 0.18336
 
 poisoningProb = {}
-poisoningProb ["youngFemale"] = 0.00000568
-poisoningProb ["adultFemale"] = 0.00000631
-poisoningProb ["oldFemale"] = 0.0000161
-poisoningProb ["youngMale"] = 0.00000743
-poisoningProb ["adultMale"] = 0.0000138
-poisoningProb ["oldMale"] = 0.0000479
+poisoningProb ["youngFemale"] = 0.008901
+poisoningProb ["adultFemale"] = 0.0079
+poisoningProb ["oldFemale"] = 0.002967
+poisoningProb ["youngMale"] = 0.01
+poisoningProb ["adultMale"] = 0.00928
+poisoningProb ["oldMale"] = 0.003483
 
 natureForceProb = 0.141
 
@@ -75,12 +77,12 @@ respiratoryInfectionProb ["adultMale"] = 0.144000
 respiratoryInfectionProb ["oldMale"] = 0.198240
 
 cardiovascularDiseaseProb = {}
-cardiovascularDiseaseProb ["youngFemale"] = 0.0000237
-cardiovascularDiseaseProb ["adultFemale"] = 0.000947
-cardiovascularDiseaseProb ["oldFemale"] = 0.0164
-cardiovascularDiseaseProb ["youngMale"] = 0.0000245
-cardiovascularDiseaseProb ["adultMale"] = 0.00140
-cardiovascularDiseaseProb ["oldMale"] = 0.0179
+cardiovascularDiseaseProb ["youngFemale"] = 0.0036
+cardiovascularDiseaseProb ["adultFemale"] = 0.0084
+cardiovascularDiseaseProb ["oldFemale"] = 0.036
+cardiovascularDiseaseProb ["youngMale"] = 0.084
+cardiovascularDiseaseProb ["adultMale"] = 0.0476
+cardiovascularDiseaseProb ["oldMale"] = 0.0204
 
 malignacyProb = {}
 malignacyProb ["youngFemale"] = 0.002000
@@ -101,24 +103,24 @@ othSicknessProb ["oldMale"] = 0.0171
 # al posto delle x vanno le somme di quelli negli appunti calcolati il primo giorno (no distinzione age-gender)
 
 unintentionalInjuriesProb = {}
-unintentionalInjuriesProb ["truetruetrue" ] = X
-unintentionalInjuriesProb ["truetruefalse" ] = X
-unintentionalInjuriesProb ["truefalsetrue" ] = X
-unintentionalInjuriesProb ["truefalsefalse" ] = X
-unintentionalInjuriesProb ["falsetruetrue" ] = X
-unintentionalInjuriesProb ["falsetruefalse" ] = X
-unintentionalInjuriesProb ["falsefalsetrue" ] = X
-unintentionalInjuriesProb ["falsefalsefalse" ] = X
+unintentionalInjuriesProb ["truetruetrue" ] = 0.001460018
+unintentionalInjuriesProb ["truetruefalse" ] = 0.00145122
+unintentionalInjuriesProb ["truefalsetrue" ] = 0.001362798
+unintentionalInjuriesProb ["truefalsefalse" ] = 0.001354
+unintentionalInjuriesProb ["falsetruetrue" ] = 0.000106018
+unintentionalInjuriesProb ["falsetruefalse" ] = 0.00009722
+unintentionalInjuriesProb ["falsefalsetrue" ] = 0.000008798
+unintentionalInjuriesProb ["falsefalsefalse" ] = 0.00000001
 
 sicknessProb = {}
-sicknessProb ["truetruetrue" ] = X
-sicknessProb ["truetruefalse" ] = X
-sicknessProb ["truefalsetrue" ] = X
-sicknessProb ["truefalsefalse" ] = X
-sicknessProb ["falsetruetrue" ] = X
-sicknessProb ["falsetruefalse" ] = X
-sicknessProb ["falsefalsetrue" ] = X
-sicknessProb ["falsefalsefalse" ] = X
+sicknessProb ["truetruetrue" ] = 0.05344
+sicknessProb ["truetruefalse" ] = 0.044026
+sicknessProb ["truefalsetrue" ] = 0.022126
+sicknessProb ["truefalsefalse" ] = 0.006356
+sicknessProb ["falsetruetrue" ] = 0.05344
+sicknessProb ["falsetruefalse" ] = 0.03767
+sicknessProb ["falsefalsetrue" ] = 0.01577
+sicknessProb ["falsefalsefalse" ] = 0.0001
 
 deathProb = {}
 deathProb [ "truetruetruetruetruetrue" ] = 0.9999
@@ -205,7 +207,7 @@ if __name__ == "__main__":
     genderTresholds.append(int((10**order)*ageProb ["old"]*genderProb ["female"]) + int((10**order)*ageProb ["young"]) + int((10**order)*ageProb ["adult"]))
 
     with open('dataset.txt', 'w') as f:
-        headerLine = "ID        Age-range   Gender   #####    Cardiovascular-disease  Malignancy  Respiratory-infection   Poisonings     Falls      Naure-force    #####     Transport-incident      Sickness     Other-injuries     Unintentional-injuries      Other-sickness      SHV     #####      Death"
+        headerLine = "ID        Age-range   Gender   #####    Falls     Poisonings     Naure-force     Cardiovascular-disease    Malignancy  Respiratory-infection     #####     Transport-incident      Sickness     Other-injuries     Unintentional-injuries      Other-sickness      SHV     #####      Death"
         f.write(headerLine)
         f.write('\n\n')
         for i in range(1,(10**order)+1):
@@ -217,12 +219,24 @@ if __name__ == "__main__":
             if ( i in genderTresholds ):
                 genderIndex = 1 - genderIndex
 
-            line = line + str(ageGroups[ageGroupIndex]) + "\t  "
+            gender = genderGroups[genderIndex]
+            age = ageGroups[ageGroupIndex]
+
+            line = line + str(age) + "\t  "
 
             if(ageGroupIndex == 2):
                 line = line + "\t  "
 
-            line = line + str(genderGroups[genderIndex]) + "\t"
+            line = line + str(gender) + "\t"
+
+            print(random.uniform(0.00000001, 1))
+            
+
+            
+            
+            
+            
             f.write(line)
             f.write('\n')
+
         f.close()

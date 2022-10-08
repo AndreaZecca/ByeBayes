@@ -52,7 +52,13 @@ P(F | male, adult) = 7.37e-5
 uomini nell'ultima fascia 173541
 P(F | male, old) = 5.96e-4
 
+# Totale
+
+1.354e-3
+
 ## POISONING
+
+# Probability of poisonings to happen
 Total exposures: 3,316,671
 
 45% teens
@@ -64,14 +70,15 @@ Total exposures: 3,316,671
 total 0.043
 
 young female:0,008901
-young male: 0,01
 adult female: 0,0079
+old female: 0,002967
+young male: 0,01
 adult male: 0,00928
 old male: 0,003483
-old female: 0,002967
 
 
 
+# Probability of getting damages by poisonings
 
 
 donne nella prima fascia 5171\
@@ -92,6 +99,10 @@ P(P | male, adult) = 1.38e-5
 uomini nella terza fascia 13946\
 P(P | male, old) = 4.79e-5
 
+# Totale
+
+9.722e-5
+
 ## EXPOSURE TO FORCE OF NATURE
 donne nella prima fascia 845\
 P(E | female, young) = 9.29e-7
@@ -111,7 +122,11 @@ P(E | male, adult) = 1.65e-6
 uomini nella terza fascia 635
 P(E | male, old) = 2.18e-6
 
-## OTHER UNINTENTIONAL INJURIES
+# Totale
+
+8.798e-6
+
+## OTHER UNINTENTIONAL INJURIES (probability of exposure)
 donne nella prima fascia 101654\
 P(U | female, young) = 1.11e-3
 
@@ -215,6 +230,10 @@ P(R | male, adult) = 3.51e-4
 uomini nella terza fascia 741365
 P(R | male, old) = 2.54e-3
 
+# Totale
+
+6.356e-3
+
 ------------------------------
 ------------------------------
 
@@ -249,6 +268,17 @@ P(N | male, old) = 3.33e-3
 60% adult
 34% old
 
+young: 0.012
+young female: 0.0036
+young male: 0.0084
+adult: 0.12
+adult female: 0.036
+adult male: 0.084
+old: 0.068
+old females: 0.0476 
+old males: 0.0204
+
+
 
 donne nella prima fascia 21595\
 P(C | female, young) = 2.37e-5
@@ -267,6 +297,10 @@ P(C | male, adult) = 1.40e-3
 
 uomini nella terza fascia 5230482
 P(C | male, old) = 1.79e-2
+
+# Totale
+
+3.767e-2
 
 ------------------------------
 ------------------------------
@@ -289,6 +323,10 @@ P(M | male, adult) = 1.14e-3
 
 uomini nella terza fascia 2507093
 P(M | male, old) = 8.61e-3
+
+# Totale
+
+1.577e-2
 
 ------------------------------
 ------------------------------
