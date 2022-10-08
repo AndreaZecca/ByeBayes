@@ -2,15 +2,17 @@ import random
 import decimal
 
 #IS RECoMMENDED TO KEEP THE VALUE OF ORDER BETWEEN 6 AND 1
-order = 2
-
+order = 4
+fixedProbabilities = False
 
 
 def decs(number):
     d = decimal.Decimal(str(number))
     return abs(d.as_tuple().exponent)
 
-alpha = 7-order
+alpha = 1
+if(fixedProbabilities == True):
+    alpha = 7-order
 
 genderProb = {}
 genderProb [ "female"] = 0.4959
@@ -108,24 +110,24 @@ othSicknessProb ["adultmale"] = 0.00287 * alpha
 othSicknessProb ["oldmale"] = 0.0171 * alpha
 
 unintentionalInjuriesProb = {}
-unintentionalInjuriesProb ["truetruetrue" ] = 0.001460018
-unintentionalInjuriesProb ["truetruefalse" ] = 0.00145122
-unintentionalInjuriesProb ["truefalsetrue" ] = 0.001362798
-unintentionalInjuriesProb ["truefalsefalse" ] = 0.001354
-unintentionalInjuriesProb ["falsetruetrue" ] = 0.000106018
-unintentionalInjuriesProb ["falsetruefalse" ] = 0.00009722
-unintentionalInjuriesProb ["falsefalsetrue" ] = 0.000008798
-unintentionalInjuriesProb ["falsefalsefalse" ] = 0.00000001
+unintentionalInjuriesProb ["truetruetrue" ] = 0.001460018 * alpha
+unintentionalInjuriesProb ["truetruefalse" ] = 0.00145122 * alpha
+unintentionalInjuriesProb ["truefalsetrue" ] = 0.001362798 * alpha
+unintentionalInjuriesProb ["truefalsefalse" ] = 0.001354 * alpha
+unintentionalInjuriesProb ["falsetruetrue" ] = 0.000106018 * alpha
+unintentionalInjuriesProb ["falsetruefalse" ] = 0.00009722 * alpha
+unintentionalInjuriesProb ["falsefalsetrue" ] = 0.000008798 * alpha
+unintentionalInjuriesProb ["falsefalsefalse" ] = 0.00000001 * alpha
 
 sicknessProb = {}
-sicknessProb ["truetruetrue" ] = 0.05344
-sicknessProb ["truetruefalse" ] = 0.044026
-sicknessProb ["truefalsetrue" ] = 0.022126
-sicknessProb ["truefalsefalse" ] = 0.006356
-sicknessProb ["falsetruetrue" ] = 0.05344
-sicknessProb ["falsetruefalse" ] = 0.03767
-sicknessProb ["falsefalsetrue" ] = 0.01577
-sicknessProb ["falsefalsefalse" ] = 0.0001
+sicknessProb ["truetruetrue" ] = 0.05344 * alpha
+sicknessProb ["truetruefalse" ] = 0.044026 * alpha
+sicknessProb ["truefalsetrue" ] = 0.022126 * alpha
+sicknessProb ["truefalsefalse" ] = 0.006356 * alpha
+sicknessProb ["falsetruetrue" ] = 0.05344 * alpha
+sicknessProb ["falsetruefalse" ] = 0.03767 * alpha
+sicknessProb ["falsefalsetrue" ] = 0.01577 * alpha
+sicknessProb ["falsefalsefalse" ] = 0.0001 * alpha
 
 deathProb = {}
 deathProb [ "truetruetruetruetruetrue" ] = 0.9999
