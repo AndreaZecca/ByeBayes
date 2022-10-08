@@ -52,7 +52,7 @@ P(F | male, adult) = 7.37e-5
 uomini nell'ultima fascia 173541
 P(F | male, old) = 5.96e-4
 
-# Totale
+# Total
 
 1.354e-3
 
@@ -99,7 +99,7 @@ P(P | male, adult) = 1.38e-5
 uomini nella terza fascia 13946\
 P(P | male, old) = 4.79e-5
 
-# Totale
+# Total
 
 9.722e-5
 
@@ -122,7 +122,7 @@ P(E | male, adult) = 1.65e-6
 uomini nella terza fascia 635
 P(E | male, old) = 2.18e-6
 
-# Totale
+# Total
 
 8.798e-6
 
