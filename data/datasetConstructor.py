@@ -1,8 +1,10 @@
 import random
 import decimal
+import csv
+
 
 #IS RECoMMENDED TO KEEP THE VALUE OF ORDER BETWEEN 6 AND 1
-order = 4
+order = 5
 fixedProbabilities = False
 
 
@@ -213,13 +215,13 @@ if __name__ == "__main__":
     genderTresholds.append(int((10**order)*ageProb ["adult"]) + int((10**order)*ageProb ["young"]))
     genderTresholds.append(int((10**order)*ageProb ["old"]*genderProb ["female"]) + int((10**order)*ageProb ["young"]) + int((10**order)*ageProb ["adult"]))
 
-    with open('dataset.txt', 'w') as f:
-        headerLine = "ID        Age-range   Gender   #####    Falls     Poisonings     Naure-force     Cardiovascular-disease    Malignancy  Respiratory-infection     #####     Transport-incident      Sickness     Other-injuries     Unintentional-injuries      Other-sickness      SHV     #####      Death"
-        f.write(headerLine)
-        f.write('\n\n')
+    with open('dataset.csv', 'w') as file:
+        writer = csv.writer(file)
+        headerLine = ["ID","Age-range","Gender","Falls","Poisonings","Nature-force","Cardiovascular-disease","Malignancy","Respiratory-infection","Transport-incident","Sickness","Other-injuries","Unintentional-injuries","Other-sickness","SHV","Death"]
+        writer.writerow(headerLine)
         for i in range(1,(10**order)+1):
-            line = ""
-            line = line + str(i) + "\t\t   "
+
+            data = []
 
             if ( i in ageTresholds ):
                 ageGroupIndex = ageGroupIndex + 1
@@ -229,15 +231,9 @@ if __name__ == "__main__":
             gender = genderGroups[genderIndex]
             age = ageGroups[ageGroupIndex]
 
-            line = line + str(age) + "\t  "
-
-            if(ageGroupIndex == 2):
-                line = line + "\t  "
-
-            line = line + str(gender) + "\t"
-
-            if(genderIndex == 1):
-                line = line + "\t"
+            data.append(i)
+            data.append(str(age))
+            data.append(str(gender))
             
             poisonings = ( round(random.uniform(0, 1), decs(poisoningProb[age+gender])) <= poisoningProb[age+gender] )
             natureForce = ( round(random.uniform(0, 1), decs(natureForceProb)) <= natureForceProb )
@@ -256,9 +252,18 @@ if __name__ == "__main__":
 
             death = ( round(random.uniform(0, 1), decs(deathProb[(str(othInjuries)+str(unintentional)+str(transportIncident)+str(shv)+str(sickness)+str(othSickness)).lower()])) <= deathProb[(str(othInjuries)+str(unintentional)+str(transportIncident)+str(shv)+str(sickness)+str(othSickness)).lower()] )
 
-            line = str(line) + "\t\t" + str(falls) + "\t\t" + str(poisonings) + "\t\t\t" + str(natureForce) + "\t\t\t\t" + str(cardiovascularDisease) + "\t\t\t\t" + str(malignacy) + "\t\t\t\t" + str(respiratoryInfection) + "\t\t\t\t\t\t\t" + str(transportIncident) + "\t\t\t\t" + str(sickness) + "\t\t\t" + str(othInjuries) + "\t\t\t\t" + str(unintentional) + "\t\t\t\t\t" + str(othSickness) + "\t\t\t\t" + str(shv) + "\t\t\t\t" + str(death)
+            data.append(str(falls))
+            data.append(str(poisonings))
+            data.append(str(natureForce))
+            data.append(str(cardiovascularDisease))
+            data.append(str(malignacy))
+            data.append(str(respiratoryInfection))
+            data.append(str(transportIncident))
+            data.append(str(sickness))
+            data.append(str(othInjuries))
+            data.append(str(unintentional))
+            data.append(str(othSickness))
+            data.append(str(shv))
+            data.append(str(death))
 
-            f.write(line)
-            f.write('\n')
-
-        f.close()
+            writer.writerow(data)
