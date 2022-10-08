@@ -47,7 +47,7 @@ poisoningProb ["youngmale"] = 0.01 * alpha
 poisoningProb ["adultmale"] = 0.00928 * alpha
 poisoningProb ["oldmale"] = 0.003483 * alpha
 
-natureForceProb = 0.141
+natureForceProb = 0.0141
 
 othInjuriesProb = {}
 othInjuriesProb ["youngfemale"] = 0.00111 * alpha
@@ -252,18 +252,18 @@ if __name__ == "__main__":
 
             death = ( round(random.uniform(0, 1), decs(deathProb[(str(othInjuries)+str(unintentional)+str(transportIncident)+str(shv)+str(sickness)+str(othSickness)).lower()])) <= deathProb[(str(othInjuries)+str(unintentional)+str(transportIncident)+str(shv)+str(sickness)+str(othSickness)).lower()] )
 
-            data.append(str(falls))
-            data.append(str(poisonings))
-            data.append(str(natureForce))
-            data.append(str(cardiovascularDisease))
-            data.append(str(malignacy))
-            data.append(str(respiratoryInfection))
-            data.append(str(transportIncident))
-            data.append(str(sickness))
-            data.append(str(othInjuries))
-            data.append(str(unintentional))
-            data.append(str(othSickness))
-            data.append(str(shv))
-            data.append(str(death))
+            data.append(int(falls))
+            data.append(int(poisonings))
+            data.append(int(natureForce))
+            data.append(int(cardiovascularDisease))
+            data.append(int(malignacy))
+            data.append(int(respiratoryInfection))
+            data.append(int(transportIncident))
+            data.append(int(sickness))
+            data.append(int(othInjuries))
+            data.append(int(unintentional))
+            data.append(int(othSickness))
+            data.append(int(shv))
+            data.append(int(death))
 
             writer.writerow(data)
