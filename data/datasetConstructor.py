@@ -1,17 +1,16 @@
 import random
 import decimal
 
-order = 1
-alpha = 1
+#IS RECoMMENDED TO KEEP THE VALUE OF ORDER BETWEEN 6 AND 1
+order = 2
+
 
 
 def decs(number):
     d = decimal.Decimal(str(number))
     return abs(d.as_tuple().exponent)
-    #n = len(str(number).split(".")[1])
-    #return n
 
-X = 0
+alpha = 7-order
 
 genderProb = {}
 genderProb [ "female"] = 0.4959
@@ -23,92 +22,90 @@ ageProb ["adult"] = 0.5995
 ageProb ["old"] = 0.0817
 
 fallsProb = {}
-fallsProb ["youngfemalefalse"] = 0.14037
-fallsProb ["adultfemalefalse"] = 0.06380
-fallsProb ["oldfemalefalse"] = 0.12761
-fallsProb ["youngmalefalse"] = 0.18288
-fallsProb ["adultmalefalse"] = 0.08313
-fallsProb ["oldmalefalse"] = 0.16626
-fallsProb ["youngfemaletrue"] = 0.14037
-fallsProb ["adultfemaletrue"] = 0.08520
-fallsProb ["oldfemaletrue"] = 0.15
-fallsProb ["youngmaletrue"] = 0.08313
-fallsProb ["adultmaletrue"] = 0.10411
-fallsProb ["oldmaletrue"] = 0.18336
+fallsProb ["youngfemalefalse"] = 0.14037 * alpha
+fallsProb ["adultfemalefalse"] = 0.06380 * alpha
+fallsProb ["oldfemalefalse"] = 0.12761 * alpha
+fallsProb ["youngmalefalse"] = 0.18288 * alpha
+fallsProb ["adultmalefalse"] = 0.08313 * alpha
+fallsProb ["oldmalefalse"] = 0.16626 * alpha
+fallsProb ["youngfemaletrue"] = 0.14037 * alpha
+fallsProb ["adultfemaletrue"] = 0.08520 * alpha
+fallsProb ["oldfemaletrue"] = 0.15 * alpha
+fallsProb ["youngmaletrue"] = 0.08313 * alpha
+fallsProb ["adultmaletrue"] = 0.10411 * alpha
+fallsProb ["oldmaletrue"] = 0.18336 * alpha
 
 poisoningProb = {}
-poisoningProb ["youngfemale"] = 0.008901
-poisoningProb ["adultfemale"] = 0.0079
-poisoningProb ["oldfemale"] = 0.002967
-poisoningProb ["youngmale"] = 0.01
-poisoningProb ["adultmale"] = 0.00928
-poisoningProb ["oldmale"] = 0.003483
+poisoningProb ["youngfemale"] = 0.008901 * alpha
+poisoningProb ["adultfemale"] = 0.0079 * alpha
+poisoningProb ["oldfemale"] = 0.002967 * alpha
+poisoningProb ["youngmale"] = 0.01 * alpha
+poisoningProb ["adultmale"] = 0.00928 * alpha
+poisoningProb ["oldmale"] = 0.003483 * alpha
 
 natureForceProb = 0.141
 
 othInjuriesProb = {}
-othInjuriesProb ["youngfemale"] = 0.00111
-othInjuriesProb ["adultfemale"] = 0.0000668
-othInjuriesProb ["oldfemale"] = 0.000280
-othInjuriesProb ["youngmale"] = 0.000151
-othInjuriesProb ["adultmale"] = 0.000160
-othInjuriesProb ["oldmale"] = 0.000328
+othInjuriesProb ["youngfemale"] = 0.00111 * alpha
+othInjuriesProb ["adultfemale"] = 0.0000668 * alpha
+othInjuriesProb ["oldfemale"] = 0.000280 * alpha
+othInjuriesProb ["youngmale"] = 0.000151 * alpha
+othInjuriesProb ["adultmale"] = 0.000160 * alpha
+othInjuriesProb ["oldmale"] = 0.000328 * alpha
 
 transportIncidentProb = {}
-transportIncidentProb ["youngfemalefalse"] = 0.01
-transportIncidentProb ["adultfemalefalse"] = 0.057
-transportIncidentProb ["oldfemalefalse"] = 0.027
-transportIncidentProb ["youngmalefalse"] = 0.018
-transportIncidentProb ["adultmalefalse"] = 0.09
-transportIncidentProb ["oldmalefalse"] = 0.038
-transportIncidentProb ["youngfemaletrue"] = 0.0152
-transportIncidentProb ["adultfemaletrue"] = 0.08664
-transportIncidentProb ["oldfemaletrue"] = 0.04104
-transportIncidentProb ["youngmaletrue"] = 0.02736
-transportIncidentProb ["adultmaletrue"] = 0.1368
-transportIncidentProb ["oldmaletrue"] = 0.05776
+transportIncidentProb ["youngfemalefalse"] = 0.01 * alpha
+transportIncidentProb ["adultfemalefalse"] = 0.057 * alpha
+transportIncidentProb ["oldfemalefalse"] = 0.027 * alpha
+transportIncidentProb ["youngmalefalse"] = 0.018 * alpha
+transportIncidentProb ["adultmalefalse"] = 0.09 * alpha
+transportIncidentProb ["oldmalefalse"] = 0.038 * alpha
+transportIncidentProb ["youngfemaletrue"] = 0.0152 * alpha
+transportIncidentProb ["adultfemaletrue"] = 0.08664 * alpha
+transportIncidentProb ["oldfemaletrue"] = 0.04104 * alpha
+transportIncidentProb ["youngmaletrue"] = 0.02736 * alpha
+transportIncidentProb ["adultmaletrue"] = 0.1368 * alpha
+transportIncidentProb ["oldmaletrue"] = 0.05776 * alpha
 
 selfHarmAndViolenceProb = {}
-selfHarmAndViolenceProb ["youngfemale"] = 0.00021
-selfHarmAndViolenceProb ["adultfemale"] = 0.01195
-selfHarmAndViolenceProb ["oldfemale"] = 0.008
-selfHarmAndViolenceProb ["youngmale"] = 0.00042
-selfHarmAndViolenceProb ["adultmale"] = 0.0239
-selfHarmAndViolenceProb ["oldmale"] = 0.016
+selfHarmAndViolenceProb ["youngfemale"] = 0.00021 * alpha
+selfHarmAndViolenceProb ["adultfemale"] = 0.01195 * alpha
+selfHarmAndViolenceProb ["oldfemale"] = 0.008 * alpha
+selfHarmAndViolenceProb ["youngmale"] = 0.00042 * alpha
+selfHarmAndViolenceProb ["adultmale"] = 0.0239 * alpha
+selfHarmAndViolenceProb ["oldmale"] = 0.016 * alpha
 
 respiratoryInfectionProb = {}
-respiratoryInfectionProb ["youngfemale"] = 0.41500
-respiratoryInfectionProb ["adultfemale"] = 0.180000
-respiratoryInfectionProb ["oldfemale"] = 0.247800
-respiratoryInfectionProb ["youngmale"] = 0.332000
-respiratoryInfectionProb ["adultmale"] = 0.144000
-respiratoryInfectionProb ["oldmale"] = 0.198240
+respiratoryInfectionProb ["youngfemale"] = 0.41500 * alpha
+respiratoryInfectionProb ["adultfemale"] = 0.180000 * alpha
+respiratoryInfectionProb ["oldfemale"] = 0.247800 * alpha
+respiratoryInfectionProb ["youngmale"] = 0.332000 * alpha
+respiratoryInfectionProb ["adultmale"] = 0.144000 * alpha
+respiratoryInfectionProb ["oldmale"] = 0.198240 * alpha
 
 cardiovascularDiseaseProb = {}
-cardiovascularDiseaseProb ["youngfemale"] = 0.0036
-cardiovascularDiseaseProb ["adultfemale"] = 0.0084
-cardiovascularDiseaseProb ["oldfemale"] = 0.036
-cardiovascularDiseaseProb ["youngmale"] = 0.084
-cardiovascularDiseaseProb ["adultmale"] = 0.0476
-cardiovascularDiseaseProb ["oldmale"] = 0.0204
+cardiovascularDiseaseProb ["youngfemale"] = 0.0036 * alpha
+cardiovascularDiseaseProb ["adultfemale"] = 0.0084 * alpha
+cardiovascularDiseaseProb ["oldfemale"] = 0.036 * alpha
+cardiovascularDiseaseProb ["youngmale"] = 0.084 * alpha
+cardiovascularDiseaseProb ["adultmale"] = 0.0476 * alpha
+cardiovascularDiseaseProb ["oldmale"] = 0.0204 * alpha
 
 malignacyProb = {}
-malignacyProb ["youngfemale"] = 0.002000
-malignacyProb ["adultfemale"] = 0.065700
-malignacyProb ["oldfemale"] = 0.168300
-malignacyProb ["youngmale"] = 0.002400
-malignacyProb ["adultmale"] = 0.078840
-malignacyProb ["oldmale"] = 0.201960
+malignacyProb ["youngfemale"] = 0.002000 * alpha
+malignacyProb ["adultfemale"] = 0.065700 * alpha
+malignacyProb ["oldfemale"] = 0.168300 * alpha
+malignacyProb ["youngmale"] = 0.002400 * alpha
+malignacyProb ["adultmale"] = 0.078840 * alpha
+malignacyProb ["oldmale"] = 0.201960 * alpha
 
 othSicknessProb = {}
-othSicknessProb ["youngfemale"] = 0.00226
-othSicknessProb ["adultfemale"] = 0.00111
-othSicknessProb ["oldfemale"] = 0.0145
-othSicknessProb ["youngmale"] = 0.00280
-othSicknessProb ["adultmale"] = 0.00287
-othSicknessProb ["oldmale"] = 0.0171
-
-# al posto delle x vanno le somme di quelli negli appunti calcolati il primo giorno (no distinzione age-gender)
+othSicknessProb ["youngfemale"] = 0.00226 * alpha
+othSicknessProb ["adultfemale"] = 0.00111 * alpha
+othSicknessProb ["oldfemale"] = 0.0145 * alpha
+othSicknessProb ["youngmale"] = 0.00280 * alpha
+othSicknessProb ["adultmale"] = 0.00287 * alpha
+othSicknessProb ["oldmale"] = 0.0171 * alpha
 
 unintentionalInjuriesProb = {}
 unintentionalInjuriesProb ["truetruetrue" ] = 0.001460018
@@ -237,6 +234,8 @@ if __name__ == "__main__":
 
             line = line + str(gender) + "\t"
 
+            if(genderIndex == 1):
+                line = line + "\t"
             
             poisonings = ( round(random.uniform(0, 1), decs(poisoningProb[age+gender])) <= poisoningProb[age+gender] )
             natureForce = ( round(random.uniform(0, 1), decs(natureForceProb)) <= natureForceProb )
@@ -255,7 +254,7 @@ if __name__ == "__main__":
 
             death = ( round(random.uniform(0, 1), decs(deathProb[(str(othInjuries)+str(unintentional)+str(transportIncident)+str(shv)+str(sickness)+str(othSickness)).lower()])) <= deathProb[(str(othInjuries)+str(unintentional)+str(transportIncident)+str(shv)+str(sickness)+str(othSickness)).lower()] )
 
-            line = str(line) + str(falls) + str(poisonings) + str(natureForce) + str(cardiovascularDisease) + str(malignacy) + str(respiratoryInfection) + str(transportIncident) + str(sickness) + str(othInjuries) + str(unintentional) + str(othSickness) + str(shv) + str(death)
+            line = str(line) + "\t\t" + str(falls) + "\t\t" + str(poisonings) + "\t\t\t" + str(natureForce) + "\t\t\t\t" + str(cardiovascularDisease) + "\t\t\t\t" + str(malignacy) + "\t\t\t\t" + str(respiratoryInfection) + "\t\t\t\t\t\t\t" + str(transportIncident) + "\t\t\t\t" + str(sickness) + "\t\t\t" + str(othInjuries) + "\t\t\t\t" + str(unintentional) + "\t\t\t\t\t" + str(othSickness) + "\t\t\t\t" + str(shv) + "\t\t\t\t" + str(death)
 
             f.write(line)
             f.write('\n')

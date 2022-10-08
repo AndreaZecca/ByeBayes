@@ -1,12 +1,102 @@
 ID        Age-range   Gender   #####    Falls     Poisonings     Naure-force     Cardiovascular-disease    Malignancy  Respiratory-infection     #####     Transport-incident      Sickness     Other-injuries     Unintentional-injuries      Other-sickness      SHV     #####      Death
 
-1		   young	  male	FalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalse
-2		   young	  male	FalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalse
-3		   adult	  female	FalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalse
-4		   adult	  female	FalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalse
-5		   adult	  male	FalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalse
-6		   adult	  male	FalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalse
-7		   adult	  male	FalseFalseFalseFalseFalseTrueFalseFalseFalseFalseFalseFalseFalse
-8		   old	  	  female	TrueFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalse
-9		   old	  	  female	FalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalseFalse
-10		   old	  	  female	FalseFalseFalseFalseTrueFalseFalseFalseFalseFalseFalseFalseFalse
+1		   young	  female			True		False			False				False				False				True							False				False			False				False					False				False				False
+2		   young	  female			True		False			True				True				False				True							False				False			False				False					False				False				False
+3		   young	  female			True		False			False				False				False				True							False				False			False				False					False				False				False
+4		   young	  female			False		False			False				True				False				True							False				False			False				False					False				False				False
+5		   young	  female			False		False			False				False				False				True							False				False			False				False					False				False				False
+6		   young	  female			True		False			False				False				False				True							False				False			False				False					False				False				False
+7		   young	  female			False		False			False				False				False				True							False				False			False				False					False				False				False
+8		   young	  female			True		False			False				False				False				True							False				False			False				False					False				False				False
+9		   young	  female			False		False			False				False				False				True							False				False			False				False					False				False				False
+10		   young	  female			True		False			False				False				False				True							False				False			False				False					False				False				False
+11		   young	  female			True		False			True				False				False				True							False				False			False				False					False				False				False
+12		   young	  female			True		False			False				False				False				True							False				False			False				False					False				False				False
+13		   young	  female			True		False			False				False				False				True							False				False			False				False					False				False				False
+14		   young	  female			True		False			False				False				False				True							False				False			False				False					False				False				False
+15		   young	  male				True		False			False				True				False				True							False				False			False				False					False				False				False
+16		   young	  male				True		False			False				False				False				True							False				False			False				False					False				False				False
+17		   young	  male				False		False			True				True				False				True							False				False			False				False					False				False				False
+18		   young	  male				False		False			False				True				False				True							True				False			False				False					False				False				False
+19		   young	  male				False		False			False				True				False				True							True				False			False				False					False				False				False
+20		   young	  male				True		False			False				True				False				True							False				False			False				False					False				False				False
+21		   young	  male				True		False			False				False				False				True							False				False			False				False					False				False				False
+22		   young	  male				True		False			False				False				False				True							False				False			False				False					False				False				False
+23		   young	  male				True		False			False				False				False				True							False				False			False				False					False				False				False
+24		   young	  male				True		False			False				False				False				True							False				False			False				False					False				False				False
+25		   young	  male				False		False			True				True				False				True							True				False			False				False					False				False				False
+26		   young	  male				True		False			False				False				False				True							False				False			False				False					False				False				False
+27		   young	  male				True		False			False				False				False				True							False				False			False				False					False				False				False
+28		   young	  male				True		False			False				False				False				True							False				False			False				False					False				False				False
+29		   young	  male				True		False			False				False				False				True							False				False			False				False					False				False				False
+30		   young	  male				False		False			True				True				False				True							False				False			False				False					False				False				False
+31		   adult	  female			False		False			True				False				True				True							False				False			False				False					False				False				False
+32		   adult	  female			True		False			False				False				False				True							False				False			False				False					False				True				False
+33		   adult	  female			True		False			False				False				False				True							True				False			False				False					False				False				False
+34		   adult	  female			False		False			False				False				True				True							False				False			False				False					False				False				False
+35		   adult	  female			False		False			True				True				True				True							False				False			False				False					False				False				False
+36		   adult	  female			False		False			False				False				False				True							True				False			False				False					False				False				False
+37		   adult	  female			False		False			False				False				False				True							False				False			False				False					False				True				False
+38		   adult	  female			False		False			True				False				False				True							True				False			False				False					False				False				False
+39		   adult	  female			False		False			False				False				True				True							True				False			False				False					False				False				False
+40		   adult	  female			False		False			False				False				False				True							False				False			False				False					False				False				False
+41		   adult	  female			False		False			False				False				False				False							False				False			False				False					False				False				False
+42		   adult	  female			True		False			False				False				False				True							True				False			False				False					False				False				False
+43		   adult	  female			False		False			False				False				False				True							False				False			False				False					False				False				False
+44		   adult	  female			False		False			False				False				True				True							True				False			False				False					False				False				False
+45		   adult	  female			False		False			False				False				True				True							False				False			False				False					False				False				False
+46		   adult	  female			True		False			False				False				False				True							False				False			False				False					False				False				False
+47		   adult	  female			False		False			False				False				False				False							False				False			False				False					False				False				False
+48		   adult	  female			False		False			False				False				False				True							False				False			False				False					False				False				False
+49		   adult	  female			False		False			False				False				False				True							False				False			False				False					False				False				False
+50		   adult	  female			False		False			False				False				False				True							False				False			False				False					False				False				False
+51		   adult	  female			True		False			False				False				False				True							True				False			False				False					False				False				False
+52		   adult	  female			True		False			True				True				True				True							True				False			False				False					False				False				False
+53		   adult	  female			False		False			False				False				True				True							False				False			False				False					False				False				False
+54		   adult	  female			False		False			False				False				False				True							True				False			False				False					False				False				False
+55		   adult	  female			True		False			False				False				True				True							False				False			False				False					False				True				False
+56		   adult	  female			True		False			True				False				False				True							False				False			False				False					False				False				False
+57		   adult	  female			False		False			False				False				False				True							False				False			False				False					False				False				False
+58		   adult	  female			True		False			False				False				True				False							False				False			False				False					False				True				False
+59		   adult	  female			False		False			False				False				True				True							True				False			False				False					False				False				False
+60		   adult	  male				False		False			False				False				False				False							True				False			False				False					False				False				False
+61		   adult	  male				False		False			False				False				False				True							False				False			False				False					False				False				False
+62		   adult	  male				False		False			False				True				False				True							True				False			False				False					False				False				False
+63		   adult	  male				False		False			True				False				False				True							True				False			False				False					False				False				False
+64		   adult	  male				False		False			False				False				False				True							True				False			False				False					False				False				False
+65		   adult	  male				False		False			True				False				True				True							False				False			False				False					False				False				False
+66		   adult	  male				True		False			True				True				False				True							True				False			False				False					False				False				False
+67		   adult	  male				True		False			False				False				False				False							True				False			False				False					False				False				False
+68		   adult	  male				False		False			False				True				True				True							True				False			False				False					False				False				False
+69		   adult	  male				True		False			False				False				False				True							True				False			False				False					False				False				False
+70		   adult	  male				True		False			False				True				False				True							True				False			False				False					False				False				True
+71		   adult	  male				False		False			False				False				False				False							True				False			False				False					False				False				False
+72		   adult	  male				True		False			False				False				True				False							True				False			False				False					True				False				False
+73		   adult	  male				False		False			True				False				True				False							False				False			False				False					False				False				False
+74		   adult	  male				False		False			False				False				True				False							False				False			False				False					False				True				False
+75		   adult	  male				True		False			False				False				True				True							True				False			False				False					False				False				False
+76		   adult	  male				False		False			False				True				False				True							False				False			False				False					False				False				False
+77		   adult	  male				False		False			False				True				False				False							False				False			False				False					False				False				False
+78		   adult	  male				True		False			False				False				True				False							True				False			False				False					False				False				False
+79		   adult	  male				True		False			False				False				True				True							True				False			False				False					False				False				False
+80		   adult	  male				True		False			False				False				False				True							False				False			False				False					False				False				False
+81		   adult	  male				False		False			False				False				False				True							True				False			False				False					False				False				False
+82		   adult	  male				False		False			False				False				False				True							False				False			False				False					False				False				False
+83		   adult	  male				False		False			True				True				True				True							True				False			False				False					False				False				False
+84		   adult	  male				True		False			False				False				False				True							True				False			False				False					False				False				False
+85		   adult	  male				True		False			False				False				False				True							True				False			False				False					False				False				False
+86		   adult	  male				False		False			False				False				False				False							False				False			False				False					False				False				False
+87		   adult	  male				False		False			False				False				True				True							True				False			False				False					False				False				False
+88		   adult	  male				True		False			False				False				True				True							False				False			False				False					False				True				True
+89		   adult	  male				False		False			False				False				False				True							False				False			False				False					False				False				False
+90		   old	  	  female			True		False			False				False				True				True							False				False			False				False					False				True				False
+91		   old	  	  female			False		False			False				False				True				True							False				False			False				False					False				False				False
+92		   old	  	  female			False		False			False				False				True				True							False				False			False				False					False				False				False
+93		   old	  	  female			True		False			False				False				False				True							False				False			False				False					False				False				False
+94		   old	  	  male				False		False			False				False				True				True							False				False			False				False					False				False				False
+95		   old	  	  male				True		False			True				False				True				True							False				False			False				False					False				False				False
+96		   old	  	  male				True		False			False				False				True				True							False				False			False				False					False				False				False
+97		   old	  	  male				False		False			False				False				True				True							False				False			False				False					False				False				False
+98		   old	  	  male				True		False			False				False				True				False							False				False			False				False					False				False				False
+99		   old	  	  male				True		False			False				False				True				True							False				False			False				False					False				False				False
+100		   old	  	  male				True		False			False				False				True				True							False				False			False				False					False				False				False
