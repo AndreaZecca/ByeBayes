@@ -4,9 +4,8 @@ import csv
 
 
 #IS RECoMMENDED TO KEEP THE VALUE OF ORDER BETWEEN 6 AND 1
-order = 5
+order = 6
 fixedProbabilities = False
-
 
 def decs(number):
     d = decimal.Decimal(str(number))
@@ -14,7 +13,7 @@ def decs(number):
 
 alpha = 1
 if(fixedProbabilities == True):
-    alpha = 7-order
+    alpha = 2
 
 genderProb = {}
 genderProb [ "female"] = 0.4959
@@ -197,8 +196,7 @@ deathProb [ "falsefalsefalsefalsetruefalse" ] = 0.25
 deathProb [ "falsefalsefalsefalsefalsetrue" ] = 0.19
 deathProb [ "falsefalsefalsefalsefalsefalse" ] = 0.0001
 
-if __name__ == "__main__":
-    
+def datasetConstructor():
     ageGroups = ["young","adult","old"]
     genderGroups = ["female","male"]
     ageGroupIndex = 0
@@ -215,7 +213,7 @@ if __name__ == "__main__":
     genderTresholds.append(int((10**order)*ageProb ["adult"]) + int((10**order)*ageProb ["young"]))
     genderTresholds.append(int((10**order)*ageProb ["old"]*genderProb ["female"]) + int((10**order)*ageProb ["young"]) + int((10**order)*ageProb ["adult"]))
 
-    with open('dataset.csv', 'w') as file:
+    with open('./data/dataset.csv', 'w') as file:
         writer = csv.writer(file)
         headerLine = ["ID","Age-range","Gender","Falls","Poisonings","Nature-force","Cardiovascular-disease","Malignancy","Respiratory-infection","Transport-incident","Sickness","Other-injuries","Unintentional-injuries","Other-sickness","SHV","Death"]
         writer.writerow(headerLine)
