@@ -361,3 +361,38 @@ TRANSPORT_INCIDENT,             0.1013
 SELF_HARM_AND_VIOLENCE,         0.1522
 SICKNESS,                       0.2511
 OTHER_SICKNESS                  0.1910
+
+------------------------------
+------------------------------
+
+# COVID 19
+
+# Probability of getting infected by Covid-19
+
+P(C | female, young) = 0.0109
+
+P(C | female, adult) = 0.0115
+
+P(C | female, old) = 0.0031
+
+P(C | male, young) = 0.0114
+
+P(C | male, adult) = 0.0115
+
+P(C | male, old) = 0.0028
+
+# Probability of getting respiratory infection if infected by Covid-19
+
+Ratio Male/Female = 0.966
+
+P(R | C, female, young) = 0.1809
+
+P(R | C, female, adult) = 0.2647
+
+P(R | C, female, old) = 0.5001
+
+P(R | C, male, young) = 0.1747
+
+P(R | C, male, adult) = 0.2557
+
+P(R | C, male, old) = 0.4830
