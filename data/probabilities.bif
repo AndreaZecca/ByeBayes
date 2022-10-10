@@ -1,13 +1,10 @@
-network DeathCauses {
+network Death_causes {
 }
 variable GENDER {
   type discrete [ 2 ] { female, male };
 }
 variable AGE {
   type discrete [ 3 ] { young, adult, old };
-}
-variable PERSONAL_INFO {
-    type discrete [ 6 ] { youngFemale, adultFemale, oldFemale, youngMale, adultMale, oldMale };
 }
 variable FALLS {
     type discrete [ 2 ] { true, false };
@@ -54,92 +51,84 @@ probability ( GENDER ) {
 probabiity ( AGE ) {
     table 0.3188, 0.5995, 0.0817;
 }
-probability ( PERSONAL_INFO | GENDER, AGE ) {
-  (female, young) 1, 0, 0, 0, 0, 0;
-  (female, adult) 0, 1, 0, 0, 0, 0;
-  (female, old) 0, 0, 1, 0, 0, 0;
-  (male, young) 0, 0, 0, 1, 0, 0;
-  (male, adult) 0, 0, 0, 0, 1, 0;
-  (male, old) 0, 0, 0, 0, 0, 1;
+probability ( FALLS | AGE, GENDER, CARDIOVASCULAR_DISEASES ) {
+    (young, female, false) 0.14037, 0.85963;
+    (adult, female, false) 0.06380, 0.93620;
+    (old, female, false) 0.12761, 0.87239;
+    (young, male, false) 0.18288, 0.81712;
+    (adult, male, false) 0.08313, 0.91687;
+    (old, male, false) 0.16626, 0.83374;
+    (young, female, true) 0.14037, 0.85963;
+    (adult, female, true) 0.08520, 0.9148;
+    (old, female, true) 0.15, 0.85;
+    (young, male, true) 0.08313, 0.91687;
+    (adult, male, true) 0.10411, 0.89589;
+    (old, male, true) 0.18336, 0.81664;
 }
-probability ( FALLS | PERSONAL_INFO, CARDIOVASCULAR_DISEASES ) {
-    (youngFemale, false) 0.14037, 0.85963;
-    (adultFemale, false) 0.06380, 0.93620;
-    (oldFemale, false) 0.12761, 0.87239;
-    (youngMale, false) 0.18288, 0.81712;
-    (adultMale, false) 0.08313, 0.91687;
-    (oldMale, false) 0.16626, 0.83374;
-    (youngFemale, true) 0.14037, 0.85963;
-    (adultFemale, true) 0.08520, 0.9148;
-    (oldFemale, true) 0.15, 0.85;
-    (youngMale, true) 0.08313, 0.91687;
-    (adultMale, true) 0.10411, 0.89589;
-    (oldMale, true) 0.18336, 0.81664;
-}
-probability ( POISONINGS | PERSONAL_INFO ) {
-    (youngFemale) 0.008901, 0.991099;
-    (adultFemale) 0.0079, 0.9921;
-    (oldFemale) 0.002967, 0.997033;
-    (youngMale) 0.01, 0.99;
-    (adultMale) 0.00928, 0.99072;
-    (oldMale) 0.003483, 0.996517;
+probability ( POISONINGS | AGE, GENDER ) {
+    (young, female) 0.008901, 0.991099;
+    (adult, female) 0.0079, 0.9921;
+    (old, female) 0.002967, 0.997033;
+    (young, male) 0.01, 0.99;
+    (adult, male) 0.00928, 0.99072;
+    (old, male) 0.003483, 0.996517;
 }
 probability ( NATURE_FORCE ) {
     table 0.141, 0.859;
 }
-probability ( TRANSPORT_INCIDENT | PERSONAL_INFO, CARDIOVASCULAR_DISEASES ) {
-    (youngFemale, false) 0.01, 0.99;
-    (adultFemale, false) 0.057, 0.943;
-    (oldFemale, false) 0.027, 0.973;
-    (youngMale, false) 0.018, 0.982;
-    (adultMale, false) 0.09, 0.91;
-    (oldMale, false) 0.038, 0.962;
-    (youngFemale, true) 0.0152, 0.9848;
-    (adultFemale, true) 0.08664, 0.91336;
-    (oldFemale, true) 0.04104, 0.95896; 
-    (youngMale, true) 0.02736, 0.97264;
-    (adultMale, true) 0.1368, 0.8632;
-    (oldMale, true) 0.05776, 0.94224;
+probability ( TRANSPORT_INCIDENT | AGE, GENDER, CARDIOVASCULAR_DISEASES ) {
+    (young, female, false) 0.01, 0.99;
+    (adult, female, false) 0.057, 0.943;
+    (old, female, false) 0.027, 0.973;
+    (young, male, false) 0.018, 0.982;
+    (adult, male, false) 0.09, 0.91;
+    (old, male, false) 0.038, 0.962;
+    (young, female, true) 0.0152, 0.9848;
+    (adult, female, true) 0.08664, 0.91336;
+    (old, female, true) 0.04104, 0.95896; 
+    (young, male, true) 0.02736, 0.97264;
+    (adult, male, true) 0.1368, 0.8632;
+    (old, male, true) 0.05776, 0.94224;
 }
-probability ( RESPIRATORY_INFECTIONS | PERSONAL_INFO ) {
-    (youngFemale) 0.41500, 0.585000;
-    (adultFemale) 0.180000, 0.820000;
-    (oldFemale) 0.247800, 0.7522000;
-    (youngMale) 0.332000, 0.668000;
-    (adultMale) 0.144000, 0.856000;
-    (oldMale) 0.198240, 0.801760;
+probability ( RESPIRATORY_INFECTIONS | AGE, GENDER ) {
+    (young, female) 0.41500, 0.585000;
+    (adult, female) 0.180000, 0.820000;
+    (old, female) 0.247800, 0.7522000;
+    (young, male) 0.332000, 0.668000;
+    (adult, male) 0.144000, 0.856000;
+    (old, male) 0.198240, 0.801760;
 }
-probability ( CARDIOVASCULAR_DISEASES | PERSONAL_INFO ) {
-    (youngFemale) 0.0036, 0.9964;
-    (adultFemale) 0.0084, 0.9916;
-    (oldFemale) 0.036, 0.964;
-    (youngMale) 0.084, 0.916;
-    (adultMale) 0.0476, 0.9524;
-    (oldMale) 0.0204, 0.99796;
+probability ( CARDIOVASCULAR_DISEASES | AGE, GENDER ) {
+    (young, female) 0.0036, 0.9964;
+    (adult, female) 0.0084, 0.9916;
+    (old, female) 0.036, 0.964;
+    (young, male) 0.084, 0.916;
+    (adult, male) 0.0476, 0.9524;
+    (old, male) 0.0204, 0.99796;
 }
-probability ( MALIGNANCY | PERSONAL_INFO ) {
-    (youngFemale) 0.002000, 0.9980000;
-    (adultFemale) 0.065700, 0.934300;
-    (oldFemale) 0.168300, 0.831700;
-    (youngMale) 0.002400, 0.997600;
-    (adultMale) 0.078840, 0.921160;
-    (oldMale) 0.201960, 0.798040;
+probability ( MALIGNANCY | AGE, GENDER ) {
+    (young, female) 0.002000, 0.9980000;
+    (adult, female) 0.065700, 0.934300;
+    (old, female) 0.168300, 0.831700;
+    (young, male) 0.002400, 0.997600;
+    (adult, male) 0.078840, 0.921160;
+    (old, male) 0.201960, 0.798040;
 }
-probability ( OTHER_INJURIES | PERSONAL_INFO ) {
-    (youngFemale) 0.00111, 0.99899;
-    (adultFemale) 0.0000668, 0.9999332;
-    (oldFemale) 0.000280, 0.99972;
-    (youngMale) 0.000151, 0.999849;
-    (adultMale) 0.000160, 0.99984;
-    (oldMale) 0.000328, 0.999672;
+probability ( OTHER_INJURIES | AGE, GENDER ) {
+    (young, female) 0.00111, 0.99899;
+    (adult, female) 0.0000668, 0.9999332;
+    (old, female) 0.000280, 0.99972;
+    (young, male) 0.000151, 0.999849;
+    (adult, male) 0.000160, 0.99984;
+    (old, male) 0.000328, 0.999672;
 }
-probability ( OTHER_SICKNESS | PERSONAL_INFO ) {
-    (youngFemale) 0.00226, 0.99774;
-    (adultFemale) 0.00111, 0.99889;
-    (oldFemale) 0.0145, 0.9855;
-    (youngMale) 0.00280, 0.9972;
-    (adultMale) 0.00287, 0.99713;
-    (oldMale) 0.0171, 0.9829;
+probability ( OTHER_SICKNESS | AGE, GENDER ) {
+    (young, female) 0.00226, 0.99774;
+    (adult, female) 0.00111, 0.99889;
+    (old, female) 0.0145, 0.9855;
+    (young, male) 0.00280, 0.9972;
+    (adult, male) 0.00287, 0.99713;
+    (old, male) 0.0171, 0.9829;
 }
 probability ( UNINTENTIONAL_INJURIES | FALLS, POISONINGS, NATURE_FORCE) {
     (true, true, true) 0.001460018, 0.998539982;
@@ -152,22 +141,22 @@ probability ( UNINTENTIONAL_INJURIES | FALLS, POISONINGS, NATURE_FORCE) {
     (false, false, false) 0.00000001, 0.99999999;
 }
 probability ( SICKNESS | RESPIRATORY_INFECTIONS, CARDIOVASCULAR_DISEASES, MALIGNANCY) {
-    (true, true, true) 0.05344, 0.94656;
-    (true, true, false) 0.044026, 0.955974;
-    (true, false, true) 0.022126, 0.977874;
-    (true, false, false) 0.006356, 0.993644;
+    (true, true, true) 0.09344, 0.90656;
+    (true, true, false) 0.084026, 0.915974;
+    (true, false, true) 0.062126, 0.937874;
+    (true, false, false) 0.010356, 0.953644;
     (false, true, true) 0.05344, 0.94656;
     (false, true, false) 0.03767, 0.96233;
     (false, false, true) 0.01577, 0.98423;
     (false, false, false) 0.0001, 0.9999;
 }
-probability ( SELF_HARM_AND_VIOLENCE | PERSONAL_INFO ) {
-    (youngFemale) 0.00021, 0.99979;
-    (adultFemale) 0.01195, 0.98805;
-    (oldFemale) 0.008, 0.9992;
-    (youngMale) 0.00042, 0.99958;
-    (adultMale) 0.0239, 0.9761;
-    (oldMale) 0.016, 0.984;
+probability ( SELF_HARM_AND_VIOLENCE | AGE, GENDER ) {
+    (young, female) 0.00021, 0.99979;
+    (adult, female) 0.01195, 0.98805;
+    (old, female) 0.008, 0.9992;
+    (young, male) 0.00042, 0.99958;
+    (adult, male) 0.0239, 0.9761;
+    (old, male) 0.016, 0.984;
 }
 probability (DEATH | OTHER_INJURIES, UNINTENTIONAL_INJURIES, TRANSPORT_INCIDENT, SELF_HARM_AND_VIOLENCE, SICKNESS, OTHER_SICKNESS) {
     (true,true,true,true,true,true) 0.9999, 0.0001;
