@@ -34,7 +34,7 @@ variable MALIGNANCY {
     type discrete [ 2 ] { true, false };
 }
 variable COVID {
-    type discrete [ 2 ] { true, false }
+    type discrete [ 2 ] { true, false };
 }
 variable OTHER_SICKNESS {
     type discrete [ 2 ] { true, false };
