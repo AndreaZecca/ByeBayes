@@ -102,18 +102,18 @@ probability ( Transport-incident | Age-range, Gender, Cardiovascular-disease ) {
     (old, male, true) 0.94224, 0.05776
 }
 probability ( Respiratory-infection | Age-range, Gender, Covid ) {
-    (young, female, false) 0.585000, 0.41500
+    (young, female, false) 0.585000, 0.415000
     (adult, female, false) 0.820000, 0.180000
     (old, female, false) 0.7522000, 0.247800
     (young, male, false) 0.668000, 0.332000
     (adult, male, false) 0.856000, 0.144000
     (old, male, false) 0.801760, 0.198240
-    (young, female, true) 0.819100, 0.180900
-    (adult, female, true) 0.735300, 0.264700
-    (old, female, true) 0.499900, 0.500100
-    (young, male, true) 0.825300, 0.174700
-    (adult, male, true) 0.744300, 0.255700
-    (old, male, true) 0.517000, 0.483000
+    (young, female, true) 0.404100, 0.595900
+    (adult, female, true) 0.555300, 0.444700
+    (old, female, true) 0.252100, 0.747900
+    (young, male, true) 0.493300, 0.506700
+    (adult, male, true) 0.600300, 0.399700
+    (old, male, true) 0.318760, 0.681240
 }
 probability ( Cardiovascular-disease | Age-range, Gender ) {
     (young, female) 0.9964, 0.0036
