@@ -1,0 +1,7 @@
+1. Fix probabilites in both BIF files
+2. Comparison between:
+    - Covid related comparisons:
+        - P(Res.inf | Covid = T) and P(Res.inf | Covid = F)
+        - P(Death | Covid = T) and P(Death | Covid = F)
+    - Non covid related comparisons:
+        - Comparison between gender given some evidences
