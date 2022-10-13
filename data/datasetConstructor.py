@@ -87,12 +87,12 @@ respiratoryInfectionProb ["adultmale"] = 0.144000 * alpha
 respiratoryInfectionProb ["oldmale"] = 0.198240 * alpha
 
 cardiovascularDiseaseProb = {}
-cardiovascularDiseaseProb ["youngfemale"] = 0.0036 * alpha
-cardiovascularDiseaseProb ["adultfemale"] = 0.0084 * alpha
-cardiovascularDiseaseProb ["oldfemale"] = 0.036 * alpha
-cardiovascularDiseaseProb ["youngmale"] = 0.084 * alpha
-cardiovascularDiseaseProb ["adultmale"] = 0.0476 * alpha
-cardiovascularDiseaseProb ["oldmale"] = 0.00204 * alpha
+cardiovascularDiseaseProb ["youngfemale"] = 0.0048 * alpha
+cardiovascularDiseaseProb ["adultfemale"] = 0.048 * alpha
+cardiovascularDiseaseProb ["oldfemale"] = 0.0408 * alpha
+cardiovascularDiseaseProb ["youngmale"] = 0.0072 * alpha
+cardiovascularDiseaseProb ["adultmale"] = 0.072 * alpha
+cardiovascularDiseaseProb ["oldmale"] = 0.0272 * alpha
 
 malignacyProb = {}
 malignacyProb ["youngfemale"] = 0.002000 * alpha

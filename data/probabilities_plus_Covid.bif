@@ -116,12 +116,12 @@ probability ( Respiratory-infection | Age-range, Gender, Covid ) {
     (old, male, true) 0.681240, 0.318760
 }
 probability ( Cardiovascular-disease | Age-range, Gender ) {
-    (young, female) 0.0036, 0.9964
-    (adult, female) 0.0084, 0.9916
-    (old, female) 0.036, 0.964
-    (young, male) 0.084, 0.916
-    (adult, male) 0.0476, 0.9524
-    (old, male) 0.00204, 0.99796
+    (young, female) 0.0048, 0.9952;
+    (adult, female) 0.048, 0.952;
+    (old, female) 0.0408, 0.9592;
+    (young, male) 0.0072, 0.9928;
+    (adult, male) 0.072, 0.928;
+    (old, male) 0.0272, 0.9728;
 }
 probability ( Malignancy | Age-range, Gender ) {
     (young, female) 0.002000, 0.9980000

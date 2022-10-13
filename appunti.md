@@ -261,7 +261,7 @@ P(N | male, old) = 3.33e-3
 
 # CARDIOVASCULAR DISEASES
 0,2%
-70% males
+60% males
 40% females
 
 6% teens
@@ -269,14 +269,16 @@ P(N | male, old) = 3.33e-3
 34% old
 
 young: 0.012
-young female: 0.0036
-young male: 0.0084
+young female: 0.0048
+young male: 0.0072
+
 adult: 0.12
-adult female: 0.036
-adult male: 0.084
+adult female: 0.048
+adult male: 0.072
+
 old: 0.068
-old females: 0.0476 
-old males: 0.0204
+old females: 0.0408 
+old males: 0.0272
 
 
 
