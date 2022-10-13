@@ -158,14 +158,14 @@ probability ( Unintentional-injuries | Falls, Poisonings, Nature-force) {
     (false, false, false) 0.00000001, 0.99999999
 }
 probability ( Sickness | Respiratory-infection, Cardiovascular-disease, Malignancy) {
-    (true, true, true) 0.05344, 0.94656
-    (true, true, false) 0.044026, 0.955974
-    (true, false, true) 0.022126, 0.977874
-    (true, false, false) 0.006356, 0.993644
-    (false, true, true) 0.05344, 0.94656
-    (false, true, false) 0.03767, 0.96233
-    (false, false, true) 0.01577, 0.98423
-    (false, false, false) 0.0001, 0.9999
+    (true, true, true) 0.09344, 0.90656;
+    (true, true, false) 0.084026, 0.915974;
+    (true, false, true) 0.062126, 0.937874;
+    (true, false, false) 0.010356, 0.989644;
+    (false, true, true) 0.04344, 0.95656;
+    (false, true, false) 0.03767, 0.96233;
+    (false, false, true) 0.01577, 0.98423;
+    (false, false, false) 0.0001, 0.9999;
 }
 probability ( SHV | Age-range, Gender ) {
     (young, female) 0.00021, 0.99979
@@ -176,68 +176,69 @@ probability ( SHV | Age-range, Gender ) {
     (old, male) 0.016, 0.984
 }
 probability (Death | Other-injuries, Unintentional-injuries, Transport-incident, SHV, Sickness, Other-sickness) {
-    (true, true, true, true, true, true) 0.9999, 0.0001
-    (true, true, true, true, true, false) 0.81, 0.19
-    (true, true, true, true, false, true) 0.75, 0.25
-    (true, true, true, true, false, false) 0.56, 0.44
-    (true, true, true, false, true, true) 0.85, 0.15
-    (true, true, true, false, true, false) 0.66, 0.34
-    (true, true, true, false, false, true) 0.6, 0.4
-    (true, true, true, false, false, false) 0.41, 0.59
-    (true, true, false, true, true, true) 0.9, 0.1
-    (true, true, false, true, true, false) 0.71, 0.29
-    (true, true, false, true, false, true) 0.65, 0.35
-    (true, true, false, true, false, false) 0.46, 0.54
-    (true, true, false, false, true, true) 0.75, 0.25
-    (true, true, false, false, true, false) 0.56, 0.44
-    (true, true, false, false, false, true) 0.5, 0.5
-    (true, true, false, false, false, false) 0.3, 0.7
-    (true, false, true, true, true, true) 0.85, 0.15
-    (true, false, true, true, true, false) 0.66, 0.34
-    (true, false, true, true, false, true) 0.6, 0.4
-    (true, false, true, true, false, false) 0.41, 0.59
-    (true, false, true, false, true, true) 0.7, 0.3
-    (true, false, true, false, true, false) 0.5, 0.5
-    (true, false, true, false, false, true) 0.44, 0.56
-    (true, false, true, false, false, false) 0.25, 0.75
-    (true, false, false, true, true, true) 0.75, 0.25
-    (true, false, false, true, true, false) 0.56, 0.44
-    (true, false, false, true, false, true) 0.5, 0.5
-    (true, false, false, true, false, false) 0.3, 0.7
-    (true, false, false, false, true, true) 0.59, 0.41
-    (true, false, false, false, true, false) 0.4, 0.6
-    (true, false, false, false, false, true) 0.34, 0.66
-    (true, false, false, false, false, false) 0.15, 0.85
-    (false, true, true, true, true, true) 0.85, 0.15
-    (false, true, true, true, true, false) 0.66, 0.34
-    (false, true, true, true, false, true) 0.6, 0.4
-    (false, true, true, true, false, false) 0.41, 0.59
-    (false, true, true, false, true, true) 0.7, 0.3
-    (false, true, true, false, true, false) 0.5, 0.5
-    (false, true, true, false, false, true) 0.44, 0.56
-    (false, true, true, false, false, false) 0.25, 0.75
-    (false, true, false, true, true, true) 0.75, 0.25
-    (false, true, false, true, true, false) 0.56, 0.44
-    (false, true, false, true, false, true) 0.5, 0.5
-    (false, true, false, true, false, false) 0.3, 0.7
-    (false, true, false, false, true, true) 0.59, 0.41
-    (false, true, false, false, true, false) 0.4, 0.6
-    (false, true, false, false, false, true) 0.34, 0.66
-    (false, true, false, false, false, false) 0.15, 0.85
-    (false, false, true, true, true, true) 0.7, 0.3
-    (false, false, true, true, true, false) 0.5, 0.5
-    (false, false, true, true, false, true) 0.44, 0.56
-    (false, false, true, true, false, false) 0.25, 0.75
-    (false, false, true, false, true, true) 0.54, 0.46
-    (false, false, true, false, true, false) 0.35, 0.65
-    (false, false, true, false, false, true) 0.29, 0.71
-    (false, false, true, false, false, false) 0.1, 0.9
-    (false, false, false, true, true, true) 0.59, 0.41
-    (false, false, false, true, true, false) 0.4, 0.6
-    (false, false, false, true, false, true) 0.34, 0.66
-    (false, false, false, true, false, false) 0.15, 0.85
-    (false, false, false, false, true, true) 0.44, 0.56
-    (false, false, false, false, true, false) 0.25, 0.75
-    (false, false, false, false, false, true) 0.19, 0.81
-    (false,false,false,false,false,false) 0.0001, 0.9999
+    (true, true, true, true, true, true) 0.999, 0.001;
+    (true, true, true, true, true, false) 0.87, 0.13;
+    (true, true, true, true, false, true) 0.65, 0.35;
+    (true, true, true, true, false, false) 0.52, 0.48;
+    (true, true, true, false, true, true) 0.88, 0.12;
+    (true, true, true, false, true, false) 0.75, 0.25;
+    (true, true, true, false, false, true) 0.53, 0.47;
+    (true, true, true, false, false, false) 0.4, 0.6;
+    (true, true, false, true, true, true) 0.9, 0.1;
+    (true, true, false, true, true, false) 0.77, 0.23;
+    (true, true, false, true, false, true) 0.55, 0.45;
+    (true, true, false, true, false, false) 0.42, 0.58;
+    (true, true, false, false, true, true) 0.78, 0.22;
+    (true, true, false, false, true, false) 0.65, 0.35;
+    (true, true, false, false, false, true) 0.43, 0.57;
+    (true, true, false, false, false, false) 0.29, 0.71;
+    (true, false, true, true, true, true) 0.85, 0.15;
+    (true, false, true, true, true, false) 0.72, 0.28;
+    (true, false, true, true, false, true) 0.5, 0.5;
+    (true, false, true, true, false, false) 0.37, 0.63;
+    (true, false, true, false, true, true) 0.73, 0.27;
+    (true, false, true, false, true, false) 0.59, 0.41;
+    (true, false, true, false, false, true) 0.37, 0.63;
+    (true, false, true, false, false, false) 0.24, 0.76;
+    (true, false, false, true, true, true) 0.75, 0.25;
+    (true, false, false, true, true, false) 0.62, 0.38;
+    (true, false, false, true, false, true) 0.4, 0.6;
+    (true, false, false, true, false, false) 0.26, 0.74;
+    (true, false, false, false, true, true) 0.62, 0.38;
+    (true, false, false, false, true, false) 0.49, 0.51;
+    (true, false, false, false, false, true) 0.27, 0.73;
+    (true, false, false, false, false, false) 0.14, 0.86;
+    (false, true, true, true, true, true) 0.86, 0.14;
+    (false, true, true, true, true, false) 0.73, 0.27;
+    (false, true, true, true, false, true) 0.51, 0.49;
+    (false, true, true, true, false, false) 0.38, 0.62;
+    (false, true, true, false, true, true) 0.74, 0.26;
+    (false, true, true, false, true, false) 0.6, 0.4;
+    (false, true, true, false, false, true) 0.38, 0.62;
+    (false, true, true, false, false, false) 0.25, 0.75;
+    (false, true, false, true, true, true) 0.76, 0.24;
+    (false, true, false, true, true, false) 0.63, 0.37;
+    (false, true, false, true, false, true) 0.41, 0.59;
+    (false, true, false, true, false, false) 0.27, 0.73;
+    (false, true, false, false, true, true) 0.63, 0.37;
+    (false, true, false, false, true, false) 0.5, 0.5;
+    (false, true, false, false, false, true) 0.28, 0.72;
+    (false, true, false, false, false, false) 0.15, 0.85;
+    (false, false, true, true, true, true) 0.71, 0.29;
+    (false, false, true, true, true, false) 0.57, 0.43;
+    (false, false, true, true, false, true) 0.35, 0.65;
+    (false, false, true, true, false, false) 0.22, 0.78;
+    (false, false, true, false, true, true) 0.58, 0.42;
+    (false, false, true, false, true, false) 0.45, 0.55;
+    (false, false, true, false, false, true) 0.23, 0.77;
+    (false, false, true, false, false, false) 0.1, 0.9;
+    (false, false, false, true, true, true) 0.6, 0.4;
+    (false, false, false, true, true, false) 0.47, 0.53;
+    (false, false, false, true, false, true) 0.25, 0.75;
+    (false, false, false, true, false, false) 0.12, 0.88;
+    (false, false, false, false, true, true) 0.48, 0.52;
+    (false, false, false, false, true, false) 0.35, 0.65;
+    (false, false, false, false, false, true) 0.13, 0.87;
+    (false, false, false, false, false, false) 0.001, 0.999;
+
 }

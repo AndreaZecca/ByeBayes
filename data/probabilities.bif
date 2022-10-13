@@ -141,14 +141,14 @@ probability ( Unintentional-injuries | Falls, Poisonings, Nature-force) {
     (false, false, false) 0.00000001, 0.99999999;
 }
 probability ( Sickness | Respiratory-infection, Cardiovascular-disease, Malignancy) {
-    (true, true, true) 0.09344, 0.90656;
-    (true, true, false) 0.084026, 0.915974;
-    (true, false, true) 0.062126, 0.937874;
-    (true, false, false) 0.010356, 0.989644;
-    (false, true, true) 0.05344, 0.94656;
-    (false, true, false) 0.03767, 0.96233;
-    (false, false, true) 0.01577, 0.98423;
-    (false, false, false) 0.0001, 0.9999;;
+    (true, true, true) 0.05344, 0.94656
+    (true, true, false) 0.044026, 0.955974
+    (true, false, true) 0.022126, 0.977874
+    (true, false, false) 0.006356, 0.993644
+    (false, true, true) 0.04344, 0.95656
+    (false, true, false) 0.03767, 0.96233
+    (false, false, true) 0.01577, 0.98423
+    (false, false, false) 0.0001, 0.9999
 }
 probability ( SHV | Age-range, Gender ) {
     (young, female) 0.00021, 0.99979;
@@ -223,5 +223,4 @@ probability (Death | Other-injuries, Unintentional-injuries, Transport-incident,
     (false, false, false, false, true, false) 0.25, 0.75;
     (false, false, false, false, false, true) 0.19, 0.81;
     (false,false,false,false,false,false) 0.0001, 0.9999;
-    
 }
