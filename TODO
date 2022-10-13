@@ -2,3 +2,9 @@
 2. Comparison between:
     - Non covid related comparisons:
         - Comparison between gender given some evidences
+    - Gender | Death=t
+    - Death | Cardio=t
+    - Uni Inj | Fall=t
+    - Age | Transport=t
+    - Death | Sickness=t, Transport=t, Gender=m
+    - Respi | Pois, Falls
