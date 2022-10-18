@@ -1,7 +1,3 @@
-[Link paper Here](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(18)32203-7/fulltext)
-
-[Link diagram Here](https://drive.google.com/file/d/1q8HdJQ14rsh0vXcSK5SdcbPH6vIohGg6/view?usp=sharing)
-
 ## Study updated to 2017
 
 # Distribution by gender:
